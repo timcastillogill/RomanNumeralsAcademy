@@ -24,11 +24,22 @@ class RomanNumeralConverterTest {
 	@CsvSource(
 			{"5,V",
 					"6, VI",
-					"7, VII"
+					"7, VII",
+					"8, VIII"
 			}
 	)
 	public void
 	given_arabic_numerals_from_five_to_eight_return_roman_numeral(int arabic, String roman) {
+		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
+	}
+
+	@ParameterizedTest
+	@CsvSource(
+			{"10,X",
+			}
+	)
+	public void
+	given_arabic_numerals_from_ten_to_thirteen_return_roman_numeral(int arabic, String roman) {
 		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
 	}
 

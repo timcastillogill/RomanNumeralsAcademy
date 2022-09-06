@@ -1,10 +1,14 @@
 public class RomanNumeralConverter {
 	public String convert(int arabic) {
-		if (arabic == 5) {
-			return "V";
-		} else if (arabic == 6) {
-			return "VI";
+		String result = "";
+
+		if (arabic <= 3) {
+			result += "I".repeat(arabic);
 		}
-		return "I".repeat(arabic);
+		if (arabic > 3) {
+			result += "V";
+			result += "I".repeat(arabic - 5);
+		}
+		return result;
 	}
 }
