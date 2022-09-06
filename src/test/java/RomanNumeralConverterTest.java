@@ -24,6 +24,7 @@ class RomanNumeralConverterTest {
 	@CsvSource(
 			{"5,V",
 					"6, VI",
+					"7, VII"
 			}
 	)
 	public void
