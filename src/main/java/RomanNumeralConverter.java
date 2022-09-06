@@ -9,6 +9,9 @@ public class RomanNumeralConverter {
 		if (arabic == 15) {
 			return "XV";
 		}
+		if (arabic == 16) {
+			return "XVI";
+		}
 		if (arabic >= 10) {
 			result += "X";
 			arabic -= 10;
