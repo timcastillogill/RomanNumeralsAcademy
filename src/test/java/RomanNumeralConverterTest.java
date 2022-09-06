@@ -23,6 +23,7 @@ class RomanNumeralConverterTest {
 	@ParameterizedTest
 	@CsvSource(
 			{"5,V",
+					"6, VI",
 			}
 	)
 	public void
