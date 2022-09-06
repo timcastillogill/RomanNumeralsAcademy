@@ -1,7 +1,6 @@
-import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -35,7 +34,8 @@ class RomanNumeralConverterTest {
 
 	@ParameterizedTest
 	@CsvSource(
-			{"10,X",
+			{"10, X",
+			"11, XI"
 			}
 	)
 	public void
