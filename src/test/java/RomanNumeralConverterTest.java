@@ -1,29 +1,33 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class RomanNumeralConverterTest {
 
-	@Test
+	@ParameterizedTest
+	@CsvSource(
+			{"1,I",
+			"2,II",
+			"3,III"
+			}
+	)
 	public void
-	given_one_return_I() {
-		assertThat(new RomanNumeralConverter().convert(1), is("I"));
-	}
-	@Test
-	public void
-	given_two_return_II() {
-		assertThat(new RomanNumeralConverter().convert(2), is("II"));
+	given_arabic_numeral_with_only_ones_return_roman_numeral(int arabic, String roman) {
+		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
 	}
 
-	@Test
+	@ParameterizedTest
+	@CsvSource(
+			{"5,V",
+			}
+	)
 	public void
-	given_three_return_III() {
-		assertThat(new RomanNumeralConverter().convert(3), is("III"));
+	given_arabic_numerals_from_five_to_eight_return_roman_numeral(int arabic, String roman) {
+		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
 	}
-	@Test
-	public void
-	given_five_return_V() {
-		assertThat(new RomanNumeralConverter().convert(5), is("V"));
-	}
+
 }
