@@ -5,6 +5,10 @@ public class RomanNumeralConverter {
 		if (arabic == 10) {
 			return "X";
 		}
+		if (arabic == 11) {
+			return "XI";
+		}
+
 		if (arabic > 3) {
 			result += "V";
 			arabic -= 5;
