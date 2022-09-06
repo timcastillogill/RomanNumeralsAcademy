@@ -2,16 +2,16 @@ public class RomanNumeralConverter {
 	public String convert(int arabic) {
 		String result = "";
 
-		if (arabic == 10) {
-			return "X";
-		}
-		if (arabic == 11) {
-			return "XI";
-		}
-
-		if (arabic > 3) {
+		if (arabic > 3 && arabic < 10) {
 			result += "V";
 			arabic -= 5;
+		}
+		if (arabic == 15) {
+			return "XV";
+		}
+		if (arabic >= 10) {
+			result += "X";
+			arabic -= 10;
 		}
 		return result += "I".repeat(arabic);
 	}

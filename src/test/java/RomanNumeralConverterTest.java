@@ -37,10 +37,22 @@ class RomanNumeralConverterTest {
 			{"10, X",
 			"11, XI",
 			"12, XII",
+			"13, XIII",
 			}
 	)
 	public void
 	given_arabic_numerals_from_ten_to_thirteen_return_roman_numeral(int arabic, String roman) {
+		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
+	}
+
+	@ParameterizedTest
+	@CsvSource(
+			{"15, XV",
+			"16, XVI",
+			}
+	)
+	public void
+	given_arabic_numerals_from_fifteen_to_eighteen_return_roman_numeral(int arabic, String roman) {
 		assertThat(new RomanNumeralConverter().convert(arabic), is(roman));
 	}
 
