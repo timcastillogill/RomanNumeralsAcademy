@@ -21,4 +21,9 @@ class RomanNumeralConverterTest {
 	given_three_return_III() {
 		assertThat(new RomanNumeralConverter().convert(3), is("III"));
 	}
+	@Test
+	public void
+	given_five_return_V() {
+		assertThat(new RomanNumeralConverter().convert(5), is("V"));
+	}
 }
